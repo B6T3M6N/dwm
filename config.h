@@ -6,9 +6,9 @@ static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%"
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 
 /* appearance */
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int cornerrad = 8;
+static const unsigned int cornerrad = 0;
 static const unsigned int gappih    = 25;
 static const unsigned int gappiv    = 25;
 static const unsigned int gappoh    = 25;
@@ -16,8 +16,8 @@ static const unsigned int gappov    = 25;
 static const int smartgaps          = 0;
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad            = 0;       /* vertical padding of bar */
-static const int sidepad            = 0;       /* horizontal padding of bar */
+static const int vertpad            = 10;       /* vertical padding of bar */
+static const int sidepad            = 25;       /* horizontal padding of bar */
 static const char *fonts[]          = { "FontAwesome:size=14", "Noto Sans Mono:size=11" };
 static const char dmenufont[]       = "Noto Sans Mono:size=11";
 static const char col_bg[] 			= "#282828";
@@ -85,6 +85,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_inactive, "-sb", col_bg, "-sf", col_active, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *passmenucmd[] = { "passmenu", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_inactive, "-sb", col_bg, "-sf", col_active, NULL };
+static const char *roficmd[] = { "rofi", "-show", "run"};
+static const char *rofipasscmd[] = { "rofi-pass"};
 
 #include "movestack.c"
 static Key keys[] = {
@@ -92,8 +94,8 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{ 0,                            XF86XK_AudioMute, spawn, {.v = mutevol } },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_p,      spawn,          {.v = passmenucmd } },
+	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = rofipasscmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
