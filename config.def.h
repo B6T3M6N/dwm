@@ -50,6 +50,7 @@ static const Rule rules[] = {
 	{ "Postman",  NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Brave-browser",  NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "Chromium",  NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "firefox",  NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "Geary",  NULL,       NULL,       1 << 6,       0,           -1 },
 	{ "Slack",  NULL,       NULL,       1 << 7,       0,           -1 },
 };
