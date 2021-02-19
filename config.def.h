@@ -22,8 +22,8 @@ static const char *fonts[]          = { "FontAwesome:size=14", "Noto Sans Mono:s
 static const char dmenufont[]       = "Noto Sans Mono:size=11";
 static const char col_bg[] 			= "#282828";
 static const char col_fg[] 			= "#a89984";
-static const char col_active[] 	 	= "#98971a";
-static const char col_inactive[]  	= "#57571d";
+static const char col_active[] 	 	= "#d79921";
+static const char col_inactive[]  	= "#9a6f18";
 static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#689d68";
 static const char col_gray3[]       = "#1d2021";
@@ -37,7 +37,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -48,9 +48,9 @@ static const Rule rules[] = {
 	// { "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Conky",     NULL,       NULL,       0,            1,           -1 },
 	{ "Postman",  NULL,       NULL,       1 << 2,       0,           -1 },
-	{ "Brave-browser",  NULL,       NULL,       1 << 5,       0,           -1 },
-	{ "Chromium",  NULL,       NULL,       1 << 5,       0,           -1 },
-	{ "firefox",  NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "Brave-browser",  NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "Chromium",  NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "firefox",  NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Geary",  NULL,       NULL,       1 << 6,       0,           -1 },
 	{ "Slack",  NULL,       NULL,       1 << 7,       0,           -1 },
 };
